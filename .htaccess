@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+DirectoryIndex control.php
+RewriteRule ^([^\.]+)$ control.php?url=$1 [NC,L]
