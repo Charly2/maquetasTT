@@ -1,4 +1,6 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-DirectoryIndex control.php
-RewriteRule ^([^\.]+)$ control.php?url=$1 [NC,L]
+DirectoryIndex control.php?url=index&admin=0
+RewriteRule admin/([^\.]+)$ control.php?url=$1&admin=1 [NC,L]
+RewriteRule panel/([^\.]+)$ control.php?url=$1&admin=2 [NC,L]
+RewriteRule ^([^\.]+)$ control.php?url=$1&admin=0 [NC,L]
